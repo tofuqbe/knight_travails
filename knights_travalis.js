@@ -75,8 +75,4 @@ class KnightTravails {
   }
 }
 
-let knightTravails = new KnightTravails();
-
-console.log(knightTravails.knightMoves([8, 8], [1, 1]));
-
 module.exports = KnightTravails;
