@@ -1,94 +1,82 @@
-const LinkedList = require("./Linked_list");
-const Graph = require("./graph");
-
-class Board {
-  squaresVisited = new LinkedList();
-  toBeVisited = new LinkedList();
-  constructor() {
-    this.leastCost = [];
-    for (let i = 1; i <= 8; i++) {
-      for (let j = 1; j <= 8; j++) {
-        this.leastCost.push([0]);
-      }
-    }
-  }
-
-  accessLeastCost(position) {
-    return (position[0] - 1) * 8 + position[1] - 1;
-  }
-}
-
-class Knight {
-  constructor() {
-    this.moves = {
-      1: [1, 2],
-      2: [1, -2],
-      3: [-1, 2],
-      4: [-1, -2],
-      5: [2, 1],
-      6: [2, -1],
-      7: [-2, 1],
-      8: [-2, -2],
-    };
-  }
-
-  getNewPosition(currentPosition, movement) {
-    return [currentPosition[0] + movement[0], currentPosition[1] + movement[1]];
-  }
-
-  checkMove(position) {
-    if (position[0] < 1 || position[0] > 8) return null;
-    if (position[1] < 1 || position[1] > 8) return null;
-    return 1;
-  }
-}
+const Knight = require("./modules/class_modules/knight");
+const Board = require("./modules/class_modules/board");
 
 class KnightTravails {
   board = new Board();
   knight = new Knight();
 
-  possibleMoves(currentPosition) {
+  possibleMoves(startSquare) {
     let possibleMoves = [];
     for (let i = 1; i <= 8; i++) {
       let newPosition = this.knight.getNewPosition(
-        currentPosition,
+        startSquare,
         this.knight.moves[i]
       );
       if (this.knight.checkMove(newPosition)) {
-        if (this.board.squaresVisited.find(newPosition) === null) {
-          this.board.squaresVisited.append(newPosition);
-          possibleMoves.push(newPosition);
-          this.board.leastCost[this.board.accessLeastCost(newPosition)] =
-            this.board.leastCost[this.board.accessLeastCost(currentPosition)] +
-            1;
+        let speed =
+          this.board.leastCost[this.board.accessSquare(startSquare)] + 1;
+        if (
+          this.board.leastCost[this.board.accessSquare(newPosition)] > speed
+        ) {
+          this.board.leastCost[this.board.accessSquare(newPosition)] = speed;
+          this.board.squaresVisited[
+            this.board.accessSquare(newPosition)
+          ][2].head = null;
+          let current =
+            this.board.squaresVisited[this.board.accessSquare(startSquare)][2]
+              .head;
+          while (current) {
+            this.board.squaresVisited[
+              this.board.accessSquare(newPosition)
+            ][2].append(current.value);
+            current = current.next;
+          }
+          this.board.squaresVisited[
+            this.board.accessSquare(newPosition)
+          ][2].append(newPosition);
         }
+        possibleMoves.push(newPosition);
       }
     }
     return possibleMoves;
   }
 
-  calcMoves(startPos, endPos) {
-    let priorityQueue = [];
-    let counter = 0;
-    while (this.board.squaresVisited.size < 64) {
-      if (priorityQueue.length < 1) {
-        let possibleMoves = this.possibleMoves(startPos);
-        for (let i = 0; i < possibleMoves.length; i++) {
-          priorityQueue.push(possibleMoves[i]);
-        }
-      } else {
-        let possibleMoves = this.possibleMoves(priorityQueue[counter]);
-        for (let i = 0; i < possibleMoves.length; i++) {
-          priorityQueue.push(possibleMoves[i]);
-        }
-        counter++;
+  knightMoves(startSquare, targetSquare) {
+    this.board.leastCost[this.board.accessSquare(startSquare)] = 0;
+    this.board.squaresVisited[this.board.accessSquare(startSquare)][2].append(
+      startSquare
+    );
+
+    let queue = [startSquare];
+    for (let i = 0; i < queue.length; i++) {
+      let nextMoves = this.possibleMoves(queue[i]);
+      for (let j = 0; j < nextMoves.length; j++) {
+        queue.push(nextMoves[j]);
+      }
+      if (queue[i][0] === targetSquare[0] && queue[i][1] === targetSquare[1]) {
+        return this.printShortestPath(
+          startSquare,
+          this.board.squaresVisited[this.board.accessSquare(targetSquare)][2]
+        );
       }
     }
-    return this.board.leastCost[this.board.accessLeastCost(endPos)];
+  }
+
+  printShortestPath(startSquare, targetSquare) {
+    let string = `> knightMoves([${startSquare}],[${
+      targetSquare.tail.value
+    }])\n=> You made it in ${targetSquare.size - 1} moves! Here's your path:\n`;
+    let current = targetSquare.head;
+    while (current) {
+      string += current.value + "\n";
+      current = current.next;
+    }
+    return string.slice(0, -1);
   }
 }
 
 let knightTravails = new KnightTravails();
 
-// console.log(knightTravails.board.leastCost);
-console.log(knightTravails.calcMoves([3, 5], [6, 8]));
+console.log(knightTravails.knightMoves([8, 8], [1, 1]));
+
+module.exports = KnightTravails;

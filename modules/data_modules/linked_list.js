@@ -70,6 +70,7 @@ class LinkedList {
     return current.value === value ? true : false;
   }
 
+  // MODIFIED FOR KNIGHT TRAVAILS. COMPARES TWO AXIS (X,Y) AS INDICIES [0, 1] FROM ARRAY.
   find(value) {
     if (this.head === null) {
       return null;
@@ -77,7 +78,7 @@ class LinkedList {
     let current = this.head;
 
     let i = 0;
-    if (current === value) {
+    if (current.value[0] === value[0] && current.value[1] === value[1]) {
       return i;
     } else {
       while (current.next) {
@@ -88,7 +89,9 @@ class LinkedList {
       }
     }
 
-    return current.value === value ? i : null;
+    return current.value[0] === value[0] && current.value[1] === value[1]
+      ? i
+      : null;
   }
 
   toString() {
