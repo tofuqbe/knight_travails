@@ -12,10 +12,3 @@ class Board {
     }
     this.squares[Board.access(startSq)].turns = 0;
   }
-
-  static access(position) {
-    return (position[0] - 1) * 8 + position[1] - 1;
-  }
-}
-
-module.exports = Board;

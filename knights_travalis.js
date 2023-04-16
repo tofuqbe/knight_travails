@@ -1,4 +1,4 @@
-const Knight = require("./modules/class_modules/knight");
+onst Knight = require("./modules/class_modules/knight");
 const Board = require("./modules/class_modules/board");
 
 let board = new Board();
