@@ -1,4 +1,4 @@
-const LinkedList = require("../data_modules/linked_list");
+import LinkedList from "../data_modules/linked_list.js";
 class Board {
   squares = [];
 
@@ -18,4 +18,4 @@ class Board {
   }
 }
 
-module.exports = Board;
+export default Board;

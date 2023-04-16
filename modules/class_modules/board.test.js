@@ -1,4 +1,4 @@
-const Board = require("./board");
+import Board from "./board.js";
 
 test("Check there are 64 leastCost tiles.", () => {
   const board = new Board([5, 2]);

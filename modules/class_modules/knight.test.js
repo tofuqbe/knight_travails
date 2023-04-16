@@ -1,4 +1,4 @@
-const Knight = require("./knight");
+import Knight from "./knight.js";
 
 test("test knight can move using two 2 indicie arrays as arguments for newPos", () => {
   expect(Knight.newPos([5, 3], [2, 1])).toEqual([7, 4]);

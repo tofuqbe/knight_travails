@@ -1,4 +1,4 @@
-const KnightTravails = require("./knights_travalis");
+import KnightTravails from "./knights_travalis.js";
 
 test("Check whether knightMoves returns the correct move order and length", () => {
   const knight_travails = new KnightTravails();

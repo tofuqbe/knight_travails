@@ -1,5 +1,5 @@
-const Knight = require("./modules/class_modules/knight");
-const Board = require("./modules/class_modules/board");
+import Knight from "./modules/class_modules/knight.js";
+import Board from "./modules/class_modules/board.js";
 
 let board = new Board();
 
@@ -62,4 +62,4 @@ class KnightTravails {
   }
 }
 
-module.exports = KnightTravails;
+export default KnightTravails;

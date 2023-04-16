@@ -21,4 +21,4 @@ class Knight {
   }
 }
 
-module.exports = Knight;
+export default Knight;
