@@ -1,4 +1,4 @@
-onst Board = require("./board");
+const Board = require("./board");
 
 test("Check there are 64 leastCost tiles.", () => {
   const board = new Board([5, 2]);
