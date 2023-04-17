@@ -4,12 +4,15 @@
    data-name="Layer 1"
    viewBox="0 0 116.8 122.88"
    version="1.1"
-   sodipodi:docname="flag.svg"
+   sodipodi:docname="flagSmall.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <sodipodi:namedview
      id="namedview225"
      pagecolor="#ffffff"
@@ -20,7 +23,7 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="4.9194338"
-     inkscape:cx="-24.494689"
+     inkscape:cx="-74.093893"
      inkscape:cy="27.340545"
      inkscape:window-width="3380"
      inkscape:window-height="1414"
@@ -53,10 +56,19 @@
      d="M 43.999098,64.732462 42.145886,46.4889 a 1.3786875,1.3786875 0 0 1 0.695756,-1.340213 c 8.721,-5.578875 12.911569,-3.315262 16.771894,-1.2312 3.05235,1.648013 5.841787,3.15495 11.879156,-1.97505 a 1.4267812,1.4267812 0 0 1 1.987875,0.141075 1.3530375,1.3530375 0 0 1 0.320625,0.775913 l 1.853213,18.240356 a 1.3562437,1.3562437 0 0 1 -0.442463,1.144631 c -6.986419,6.3612 -11.221875,4.219425 -15.582375,2.010319 -3.530081,-1.792294 -7.182,-3.635887 -13.318762,1.452431 A 1.4331937,1.4331937 0 0 1 44.319723,65.54685 1.3658625,1.3658625 0 0 1 43.999098,64.732462 Z"
      id="path220"
      style="opacity:1;mix-blend-mode:darken;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.67274;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter1278)"
-     transform="matrix(1.8304889,0,0,1.2236044,-48.809302,-24.009054)" />
+     transform="matrix(0.91524445,0,0,0.6118022,4.6648495,16.097624)" />
   <path
      class="cls-2"
-     d="m 29.843743,28.38913 3.171578,61.210578 a 2.2117592,4.277291 0 1 1 -4.401048,0.838074 l -3.16195,-61.01192 a 3.258252,6.301089 0 1 1 4.39142,-1.036732 z"
+     d="m 43.991372,42.296716 1.585789,30.605289 a 1.1058796,2.1386455 0 1 1 -2.200524,0.419037 l -1.580975,-30.50596 a 1.629126,3.1505445 0 1 1 2.19571,-0.518366 z"
      id="path222"
-     style="fill:#000000;stroke-width:5.71398;stroke-miterlimit:4;stroke-dasharray:none" />
+     style="fill:#000000;stroke-width:2.85699;stroke-miterlimit:4;stroke-dasharray:none" />
+  <metadata
+     id="metadata842">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>red-flag</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
 </svg>

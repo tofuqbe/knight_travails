@@ -72,9 +72,7 @@ class BoardController {
       buttonController.buttonStates.destination
     ) {
       if (this.boardStates.destination.active) {
-        grid.children[
-          boardController.boardStates.destination.location
-        ].children[0].remove();
+        this.clearPath();
       }
 
       let flag = document.createElement("div");
@@ -115,7 +113,7 @@ class BoardController {
       this.convertToCoordinates(knight),
       this.convertToCoordinates(destination)
     );
-    let current = path.head;
+    let current = path.head.next;
     let array = [];
     while (current) {
       array.push(this.convertToIndex(current.value));
@@ -128,14 +126,39 @@ class BoardController {
   clearPath() {
     for (let i = 0; i < 64; i++) {
       grid.children[i].classList.remove("path");
+      grid.children[i].classList.remove("end");
+      this.clearNumbers(i);
     }
   }
 
+  clearNumbers(i) {
+    if (
+      (grid.children[i].children[0] &&
+        grid.children[i].children[0].classList.contains("numbered")) ||
+      (grid.children[i].children[0] &&
+        grid.children[i].children[0].classList.contains("flag"))
+    )
+      grid.children[i].children[0].remove();
+  }
+
   showPath(array) {
-    if (array.length === 0) return;
-    grid.children[array[0]].classList.add("path");
-    array.shift(array);
-    this.showPath(array);
+    for (let i = 0; i < array.length; i++) {
+      let number = document.createElement("div");
+      number.classList.add("numbered");
+      number.innerText = i + 1;
+      grid.children[array[i]].style.cssText = `transition: all ${
+        0.1 * i + 0.2
+      }s ease-in-out;`;
+      grid.children[array[i]].addEventListener("transitionend", () => {
+        grid.children[array[i]].style.cssText = "transition: sunset;";
+      });
+      grid.children[array[i]].classList.add("path");
+      grid.children[array[i]].append(number);
+      if (i === array.length - 1) {
+        grid.children[array[i]].classList.add("end");
+        grid.children[array[i]].firstChild.innerText = `${i + 1} turns`;
+      }
+    }
   }
 }
 
@@ -162,16 +185,20 @@ class Buttons {
     switch (type) {
       case "btn-knight":
         if (!this.buttonStates.cursor) BoardController.toggleCursor();
+        document.querySelector("#btn-destination").classList.remove("selected");
+        document.querySelector("#btn-knight").classList.add("selected");
         this.buttonStates = { knight: true, destination: false, cursor: true };
         break;
       case "btn-destination":
         if (!this.buttonStates.cursor) BoardController.toggleCursor();
+        document.querySelector("#btn-knight").classList.remove("selected");
+        document.querySelector("#btn-destination").classList.add("selected");
         this.buttonStates = { knight: false, destination: true, cursor: true };
         break;
       case "btn-path":
         if (
-          boardController.boardStates.knight.location &&
-          boardController.boardStates.destination.location
+          boardController.boardStates.knight.active &&
+          boardController.boardStates.destination.active
         ) {
           let array = boardController.createShortestPath(
             boardController.boardStates.knight.location,
@@ -179,6 +206,10 @@ class Buttons {
           );
           boardController.clearPath();
           boardController.showPath(array);
+          document
+            .querySelector("#btn-destination")
+            .classList.remove("selected");
+          document.querySelector("#btn-knight").classList.remove("selected");
         }
     }
   }
