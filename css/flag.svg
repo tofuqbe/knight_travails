@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 116.8 122.88"
+   version="1.1"
+   sodipodi:docname="red-flag-icon.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview225"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.4597169"
+     inkscape:cx="-74.602083"
+     inkscape:cy="44.110768"
+     inkscape:window-width="3380"
+     inkscape:window-height="1414"
+     inkscape:window-x="60"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs216">
+    <style
+       id="style214">.cls-1{fill:#e21b1b;}.cls-2{fill:#1a1a1a;}</style>
+  </defs>
+  <title
+     id="title218">red-flag</title>
+  <path
+     class="cls-1"
+     d="M 45.625301,67.578318 43.772089,49.334756 a 1.3786875,1.3786875 0 0 1 0.695756,-1.340213 c 8.721,-5.578875 12.911569,-3.315262 16.771894,-1.2312 3.05235,1.648013 5.841787,3.15495 11.879156,-1.97505 a 1.4267812,1.4267812 0 0 1 1.987875,0.141075 1.3530375,1.3530375 0 0 1 0.320625,0.775913 l 1.853213,18.240356 a 1.3562437,1.3562437 0 0 1 -0.442463,1.144631 c -6.986419,6.3612 -11.221875,4.219425 -15.582375,2.010319 -3.530081,-1.792294 -7.182,-3.635887 -13.318762,1.452431 a 1.4331937,1.4331937 0 0 1 -1.991082,-0.160312 1.3658625,1.3658625 0 0 1 -0.320625,-0.814388 z"
+     id="path220"
+     style="fill:#ffcc00;stroke-width:0.320625" />
+  <path
+     class="cls-2"
+     d="m 46.415463,46.603104 2.346553,29.627874 a 1.6364123,2.0703454 0 1 1 -3.256199,0.405655 L 43.166389,47.104916 a 2.41068,3.0499282 0 1 1 3.249074,-0.501812 z"
+     id="path222"
+     style="fill:#ffffff;stroke-width:0.267146" />
+</svg>

@@ -18,9 +18,11 @@
   src: url("./Dongle/Dongle-Light.ttf");
 }
 
-.body {
+.body,
+html {
   width: 100%;
   height: 100%;
+  background-color: hsl(200, 6%, 10%);
 }
 
 .max-width {
@@ -50,7 +52,7 @@
 }
 
 h1 {
-  color: hsl(39, 96%, 73%);
+  color: hsl(52, 100%, 75%);
   display: flex;
   align-items: center;
   font-size: var(--fs-600);
@@ -60,7 +62,7 @@ h1 {
 
 h1 strong {
   font-size: var(--fs-xl);
-  color: hsl(39, 96%, 48%);
+  color: hsl(46, 100%, 57%);
   text-shadow: 2px 2px #a5a3a3;
   font-family: "Dongle-Bold";
 }
@@ -77,17 +79,32 @@ h1 strong {
 
 button {
   border: unset;
+  margin-left: 4px;
+  font-family: "Dongle-Regular";
+  font-size: var(--fs-500);
+  border-radius: 2px;
+  padding: 8px;
+}
+
+button:focus {
+  background-color: hsl(79, 95%, 88%);
 }
 
 .boardContainer {
   height: 60vmin;
   width: 60vmin;
-  background-color: rgb(231, 228, 228);
+  background-color: rgb(231, 231, 228);
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-gap: 1px;
-  border: 5px solid hsl(39, 96%, 83%);
+  border: 5px solid hsl(39, 95%, 83%);
+  border-radius: 2px;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.active:hover {
+  cursor: pointer;
 }
 
 .cell {
@@ -96,11 +113,11 @@ button {
 }
 
 .light {
-  background-color: white;
+  background-color: hsl(201, 6%, 46%);
 }
 
 .dark {
-  background-color: grey;
+  background-color: hsl(200, 6%, 10%);
 }
 
 .knight {
@@ -108,4 +125,17 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.flag {
+  background-image: url("./flag.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.path {
+  background-color: red;
 }
