@@ -1,3 +1,4 @@
+// Change all dependancies from modules to import to run.
 import Board from "./board.js";
 
 test("Check there are 64 leastCost tiles.", () => {

@@ -1,3 +1,4 @@
+// Change all dependancies from modules to import to run.
 import Knight from "./knight.js";
 
 test("test knight can move using two 2 indicie arrays as arguments for newPos", () => {

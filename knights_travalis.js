@@ -53,10 +53,6 @@ class KnightTravails {
         queue.push(nextMoves[j]);
       }
       if (queue[i][0] === targetSq[0] && queue[i][1] === targetSq[1]) {
-        // return this.printShortestPath(
-        //   startSq,
-        //   board.squares[Board.access(targetSq)].path
-        // );
         return board.squares[Board.access(targetSq)].path;
       }
     }

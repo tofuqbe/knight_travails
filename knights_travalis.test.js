@@ -1,3 +1,4 @@
+// Change all dependancies from modules to import to run.
 import KnightTravails from "./knights_travalis.js";
 
 test("Check whether knightMoves returns the correct move order and length", () => {

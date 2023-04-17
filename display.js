@@ -63,6 +63,7 @@ class BoardController {
       boardController.boardStates.knight.location = e.target.dataset.index;
       buttonController.resetStates();
       BoardController.toggleCursor();
+      buttonController.clearButtonColors();
     }
   }
 
@@ -85,6 +86,7 @@ class BoardController {
 
       buttonController.resetStates();
       BoardController.toggleCursor();
+      buttonController.clearButtonColors();
     }
   }
 
@@ -150,7 +152,7 @@ class BoardController {
         0.1 * i + 0.2
       }s ease-in-out;`;
       grid.children[array[i]].addEventListener("transitionend", () => {
-        grid.children[array[i]].style.cssText = "transition: sunset;";
+        grid.children[array[i]].style.cssText = "transition: unset;";
       });
       grid.children[array[i]].classList.add("path");
       grid.children[array[i]].append(number);
@@ -177,6 +179,11 @@ class Buttons {
       destination: false,
       cursor: false,
     });
+  }
+
+  clearButtonColors() {
+    document.querySelector("#btn-destination").classList.remove("selected");
+    document.querySelector("#btn-knight").classList.remove("selected");
   }
 
   clickButton(e) {
@@ -206,10 +213,7 @@ class Buttons {
           );
           boardController.clearPath();
           boardController.showPath(array);
-          document
-            .querySelector("#btn-destination")
-            .classList.remove("selected");
-          document.querySelector("#btn-knight").classList.remove("selected");
+          this.clearButtonColors();
         }
     }
   }
